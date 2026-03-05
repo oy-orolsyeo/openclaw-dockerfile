@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+
+  openclaw-base:
+    build: .
+    container_name: openclaw-base
+    stdin_open: true
+    tty: true
+    volumes:
+      - "$HOME/Documents/openclaw/openclaw-workspace:/workspace"
+      - "$HOME/Documents/openclaw/openclaw-data:/root/.openclaw"
+    working_dir: /workspace
+    ports:
+      - "18789:18789"
+    command: bash
